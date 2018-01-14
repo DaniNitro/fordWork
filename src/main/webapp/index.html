@@ -47,7 +47,7 @@
 				 				<md-input-container class="md-block">
 				 				  <label>Select Model Year</label>
 								  <md-select ng-model="ford.model">
-								    	<md-option value="sample1">Sample 1</md-option>
+								    	<md-option value="f.modelYear" ng-repeat="f in ford">{{f.modelYear}}</md-option>
 								  </md-select>
 								</md-input-container>
 				 			</div>
@@ -55,7 +55,7 @@
 				 				<md-input-container class="md-block">
 				 				  <label>Select Vehicle Line</label>
 								  <md-select ng-model="ford.vehicleLine" ng-disabled="!ford.model">
-								    	<md-option value="sample2">Sample 2</md-option>
+								    	<md-option value="f.vehicleLine" ng-repeat="f in ford">{{f.vehicleLine}}</md-option>
 								  </md-select>
 								</md-input-container>
 				 			</div>
@@ -63,7 +63,7 @@
 				 				<md-input-container class="md-block">
 				 				  <label>Select Region</label>
 								  <md-select ng-model="ford.region" ng-disabled="!ford.vehicleLine">
-								    	<md-option value="sample3">Sample 3</md-option>
+								    	<md-option value="f.region" ng-repeat="f in ford">{{f.region}}</md-option>
 								  </md-select>
 								</md-input-container>
 				 			</div>
@@ -71,7 +71,7 @@
 				 				<md-input-container class="md-block">
 				 				  <label>Select PMT</label>
 								  <md-select ng-model="ford.pmt" ng-disabled="!ford.region">
-								    	<md-option value="sample4">Sample 4</md-option>
+								    	<md-option value="f.pmt" ng-repeat="f in ford">{{f.pmt}}</md-option>
 								  </md-select>
 								</md-input-container>
 				 			</div>
