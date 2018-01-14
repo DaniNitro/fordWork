@@ -1,21 +1,102 @@
-<!DOCTYPE html>
-<html>
+<html lang="en" >
 <head>
-<meta charset="ISO-8859-1">
-<title>Hello</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 </head>
-<script src="/node_modules/angular/angular.js"></script>
-<script type="text/javascript">
-var app = angular.module("demo",[]);
+<body ng-app="ford" ng-cloak>
 
-app.controller('demoAPP', ['$scope', function($scope) {
-	  $scope.greeting = 'Hola!';
-	}]);
-</script>
-<body ng-app="demo">
-<div ng-controller = "demoAPP">
-{{greeting}}
+<div ng-controller="fordController">
+<md-card>
+<md-card-header>
+    <md-card-header-text>
+    	<div layout="row">
+    		<div flex="33">
+    			<md-input-container class="md-block	">
+				  <label>Search</label>
+				  <input type="text" ng-model="search">
+				</md-input-container>
+    		</div>
+    		<div flex="33"   align="center">
+      			<span class="md-title" align="center">Welcome to<br><strong>The Blue Sky</strong><br>for Ford Motor Company</span>
+    		</div>
+    		<div flex="33" align="right">
+    			<img class="md-user-avatar" src="images/logo.JPG" style="width: 50%">
+    		</div>
+    	</div>
+    </md-card-header-text>
+  </md-card-header>
+ <md-card-content>
+	 <!-- <md-nav-bar md-selected-nav-item="currentNavItem">
+	  <md-nav-item md-nav-click="home" name="Home">Home</md-nav-item>
+	  <md-nav-item md-nav-sref="#" name="page2">Page Three</md-nav-item>
+	  <md-nav-item md-nav-sref="#" name="page4">Page Four</md-nav-item>
+	</md-nav-bar> -->
+	<md-tabs>
+	  <md-tab label="Home">
+	  		<md-card>
+	  			 <md-card-header>
+				    <md-card-header-text>
+				      <span class="md-title" align="center">Edit Menu</span>
+				    </md-card-header-text>
+				  </md-card-header>
+				 <md-card-content>
+				 		<div layout="row">
+				 			<div flex="25">
+				 				<md-input-container class="md-block">
+				 				  <label>Select Model Year</label>
+								  <md-select ng-model="ford.model">
+								    	<md-option value="sample1">Sample 1</md-option>
+								  </md-select>
+								</md-input-container>
+				 			</div>
+				 			<div flex="25">
+				 				<md-input-container class="md-block">
+				 				  <label>Select Vehicle Line</label>
+								  <md-select ng-model="ford.vehicleLine" ng-disabled="!ford.model">
+								    	<md-option value="sample2">Sample 2</md-option>
+								  </md-select>
+								</md-input-container>
+				 			</div>
+				 			<div flex="25">
+				 				<md-input-container class="md-block">
+				 				  <label>Select Region</label>
+								  <md-select ng-model="ford.region" ng-disabled="!ford.vehicleLine">
+								    	<md-option value="sample3">Sample 3</md-option>
+								  </md-select>
+								</md-input-container>
+				 			</div>
+				 			<div flex="25">
+				 				<md-input-container class="md-block">
+				 				  <label>Select PMT</label>
+								  <md-select ng-model="ford.pmt" ng-disabled="!ford.region">
+								    	<md-option value="sample4">Sample 4</md-option>
+								  </md-select>
+								</md-input-container>
+				 			</div>
+				 		</div>
+				 </md-card-content>
+			</md-card>
+	  </md-tab>
+	  <md-tab label="MY"><strong>Coming Soon...!!!</strong></md-tab>
+	  <md-tab label="Region"><strong>Coming Soon...!!!</strong></md-tab>
+	  <md-tab label="Vehicle"><strong>Coming Soon...!!!</strong></md-tab>
+	  <md-tab label="PMT"><strong>Coming Soon...!!!</strong></md-tab>
+	  <md-tab label="Tools"><strong>Coming Soon...!!!</strong></md-tab>
+	  <md-tab label="Admin Login"><strong>Coming Soon...!!!</strong></md-tab>
+	</md-tabs>
+ </md-card-content>    
+</md-card>
 </div>
 
 </body>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  <script type="text/javascript" src="/app.module.js"></script>
 </html>
