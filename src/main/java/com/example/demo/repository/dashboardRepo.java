@@ -1,21 +1,20 @@
-package com.example.demo.service;
+package com.example.demo.repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.model.dashboard;
-import com.example.demo.repository.dashboardRepo;
 
-
-@Service
+@Repository
 @Transactional
-public class RestService{
+public interface dashboardRepo extends JpaRepository<dashboard, Long>  {
 
 }
