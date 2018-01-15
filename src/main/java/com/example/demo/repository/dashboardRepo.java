@@ -11,10 +11,10 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.demo.model.dashboard;
+import com.example.demo.model.Dashboard;
 
 @Repository
 @Transactional
-public interface dashboardRepo extends JpaRepository<dashboard, Long>  {
+public interface dashboardRepo extends JpaRepository<Dashboard, Long>  {
 
 }

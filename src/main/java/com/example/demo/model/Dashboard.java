@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "dashboard")
-public class dashboard implements Serializable {
+public class Dashboard implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -76,7 +76,7 @@ public class dashboard implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		dashboard other = (dashboard) obj;
+		Dashboard other = (Dashboard) obj;
 		if (engineeringCommodityName == null) {
 			if (other.engineeringCommodityName != null)
 				return false;

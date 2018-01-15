@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.dashboard;
+import com.example.demo.model.Dashboard;
 import com.example.demo.repository.dashboardRepo;
 import com.example.demo.service.RestService;
 
@@ -27,9 +27,9 @@ public class RestApi {
 	private dashboardRepo dashboardRepo; 
 	
 	@GetMapping("users")
-	public List<dashboard> data()
+	public List<Dashboard> data()
 	{
-		List<dashboard> data = dashboardRepo.findAll();
+		List<Dashboard> data = dashboardRepo.findAll();
 		return data;
 	}
 }
