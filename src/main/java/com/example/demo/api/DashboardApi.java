@@ -13,18 +13,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Dashboard;
-import com.example.demo.repository.dashboardRepo;
-import com.example.demo.service.RestService;
+import com.example.demo.repository.DashboardRepository;
+import com.example.demo.service.DashboardService;
 
 @RestController
 @RequestMapping("/")
-public class RestApi {
+public class DashboardApi {
 
 	@Autowired
-	private RestService restService;
+	private DashboardService restService;
 	
 	@Autowired
-	private dashboardRepo dashboardRepo; 
+	private DashboardRepository dashboardRepo; 
 	
 	@GetMapping("users")
 	public List<Dashboard> data()

@@ -15,6 +15,6 @@ import com.example.demo.model.Dashboard;
 
 @Repository
 @Transactional
-public interface dashboardRepo extends JpaRepository<Dashboard, Long>  {
+public interface DashboardRepository extends JpaRepository<Dashboard, Long>  {
 
 }
