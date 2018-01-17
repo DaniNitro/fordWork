@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,11 +16,13 @@ public class Datasheet implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String Region;
+	@Column(name = "Region")
+	private String region;
 	private Long CPSC;
 	private String CPSC_Name;
 	private Long PMT_Engineering_Commodity_ID;
-	private String Engineering_Commodity_Name;
+	@Column(name = "Engineering_Commodity_Name")
+	private String engineeringCommodityName;
 	private Long PAF_UID;
 	private String PAF_Name_Level;
 	private Long Base_Part_Number;
@@ -43,10 +46,10 @@ public class Datasheet implements Serializable {
 		this.id = id;
 	}
 	public String getRegion() {
-		return Region;
+		return region;
 	}
 	public void setRegion(String region) {
-		Region = region;
+		this.region = region;
 	}
 	public Long getCPSC() {
 		return CPSC;
@@ -66,11 +69,11 @@ public class Datasheet implements Serializable {
 	public void setPMT_Engineering_Commodity_ID(Long pMT_Engineering_Commodity_ID) {
 		PMT_Engineering_Commodity_ID = pMT_Engineering_Commodity_ID;
 	}
-	public String getEngineering_Commodity_Name() {
-		return Engineering_Commodity_Name;
+	public String getEngineeringCommodityName() {
+		return engineeringCommodityName;
 	}
-	public void setEngineering_Commodity_Name(String engineering_Commodity_Name) {
-		Engineering_Commodity_Name = engineering_Commodity_Name;
+	public void setEngineeringCommodityName(String engineeringCommodityName) {
+		this.engineeringCommodityName = engineeringCommodityName;
 	}
 	public Long getPAF_UID() {
 		return PAF_UID;
@@ -182,19 +185,19 @@ public class Datasheet implements Serializable {
 		result = prime * result + ((Cost_Target == null) ? 0 : Cost_Target.hashCode());
 		result = prime * result + ((EDT_Status == null) ? 0 : EDT_Status.hashCode());
 		result = prime * result + ((EDT_Target == null) ? 0 : EDT_Target.hashCode());
-		result = prime * result + ((Engineering_Commodity_Name == null) ? 0 : Engineering_Commodity_Name.hashCode());
 		result = prime * result + ((Line_of_Usage == null) ? 0 : Line_of_Usage.hashCode());
 		result = prime * result + ((PAF_Name_Level == null) ? 0 : PAF_Name_Level.hashCode());
 		result = prime * result + ((PAF_UID == null) ? 0 : PAF_UID.hashCode());
 		result = prime * result
 				+ ((PMT_Engineering_Commodity_ID == null) ? 0 : PMT_Engineering_Commodity_ID.hashCode());
-		result = prime * result + ((Region == null) ? 0 : Region.hashCode());
 		result = prime * result + ((Salt_Data_1_Target == null) ? 0 : Salt_Data_1_Target.hashCode());
 		result = prime * result + ((Salt_Data_2_Target == null) ? 0 : Salt_Data_2_Target.hashCode());
 		result = prime * result + ((Weight_Audit == null) ? 0 : Weight_Audit.hashCode());
 		result = prime * result + ((Weight_Status == null) ? 0 : Weight_Status.hashCode());
 		result = prime * result + ((Weight_Target == null) ? 0 : Weight_Target.hashCode());
+		result = prime * result + ((engineeringCommodityName == null) ? 0 : engineeringCommodityName.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((region == null) ? 0 : region.hashCode());
 		return result;
 	}
 	@Override
@@ -256,11 +259,6 @@ public class Datasheet implements Serializable {
 				return false;
 		} else if (!EDT_Target.equals(other.EDT_Target))
 			return false;
-		if (Engineering_Commodity_Name == null) {
-			if (other.Engineering_Commodity_Name != null)
-				return false;
-		} else if (!Engineering_Commodity_Name.equals(other.Engineering_Commodity_Name))
-			return false;
 		if (Line_of_Usage == null) {
 			if (other.Line_of_Usage != null)
 				return false;
@@ -280,11 +278,6 @@ public class Datasheet implements Serializable {
 			if (other.PMT_Engineering_Commodity_ID != null)
 				return false;
 		} else if (!PMT_Engineering_Commodity_ID.equals(other.PMT_Engineering_Commodity_ID))
-			return false;
-		if (Region == null) {
-			if (other.Region != null)
-				return false;
-		} else if (!Region.equals(other.Region))
 			return false;
 		if (Salt_Data_1_Target == null) {
 			if (other.Salt_Data_1_Target != null)
@@ -311,18 +304,28 @@ public class Datasheet implements Serializable {
 				return false;
 		} else if (!Weight_Target.equals(other.Weight_Target))
 			return false;
+		if (engineeringCommodityName == null) {
+			if (other.engineeringCommodityName != null)
+				return false;
+		} else if (!engineeringCommodityName.equals(other.engineeringCommodityName))
+			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
+		if (region == null) {
+			if (other.region != null)
+				return false;
+		} else if (!region.equals(other.region))
+			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Datasheet [id=" + id + ", Region=" + Region + ", CPSC=" + CPSC + ", CPSC_Name=" + CPSC_Name
-				+ ", PMT_Engineering_Commodity_ID=" + PMT_Engineering_Commodity_ID + ", Engineering_Commodity_Name="
-				+ Engineering_Commodity_Name + ", PAF_UID=" + PAF_UID + ", PAF_Name_Level=" + PAF_Name_Level
+		return "Datasheet [id=" + id + ", region=" + region + ", CPSC=" + CPSC + ", CPSC_Name=" + CPSC_Name
+				+ ", PMT_Engineering_Commodity_ID=" + PMT_Engineering_Commodity_ID + ", engineeringCommodityName="
+				+ engineeringCommodityName + ", PAF_UID=" + PAF_UID + ", PAF_Name_Level=" + PAF_Name_Level
 				+ ", Base_Part_Number=" + Base_Part_Number + ", BPNO_Description=" + BPNO_Description + ", BPNO_Status="
 				+ BPNO_Status + ", BPNO_PAF_UID=" + BPNO_PAF_UID + ", Line_of_Usage=" + Line_of_Usage
 				+ ", Salt_Data_1_Target=" + Salt_Data_1_Target + ", Salt_Data_2_Target=" + Salt_Data_2_Target
@@ -332,5 +335,5 @@ public class Datasheet implements Serializable {
 	}
 	
 	
-
+	
 }
