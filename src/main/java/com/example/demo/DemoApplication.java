@@ -15,9 +15,10 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
+		System.out.println("don");
 	}
 	
-
+ 
 	@Bean  
 	public SessionFactory sessionFactory(HibernateEntityManagerFactory hemf){  
 	    return hemf.getSessionFactory();  
